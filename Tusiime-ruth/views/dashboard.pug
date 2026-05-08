@@ -1,0 +1,173 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Product Dashboard
+
+    link(
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    )
+
+    style.
+      body {
+          background-color: #f8f9fa;
+          padding: 30px;
+          font-family: Arial, sans-serif;
+      }
+
+      .card-box {
+          background: white;
+          border: 1px solid #e5e5e5;
+          padding: 40px 25px;
+          height: 180px;
+      }
+
+      .small-card {
+          height: 120px;
+          padding: 30px;
+      }
+
+      .divider {
+          border-left: 2px solid #ddd;
+          height: 90px;
+          margin: 0 25px;
+      }
+
+      .success-alert {
+          background: #10b759;
+          color: white;
+          padding: 8px;
+          text-align: center;
+          font-size: 14px;
+          margin-bottom: 15px;
+          position: relative;
+      }
+
+      .success-alert span {
+          position: absolute;
+          right: 15px;
+          cursor: pointer;
+      }
+
+      .btn-save {
+          background: #f58220;
+          color: white;
+          font-weight: bold;
+      }
+
+      .btn-clear {
+          background: #d9d9d9;
+          font-weight: bold;
+      }
+
+      table thead {
+          background: black;
+          color: white;
+      }
+
+      .green-text {
+          color: #13a538;
+          font-weight: bold;
+      }
+
+      .red-text {
+          color: red;
+          font-weight: bold;
+      }
+
+  body
+  
+      .container
+      .row.g-4
+        // Left dashboard
+        .col-md-6
+          .card-box.d-flex.align-items-center.justify-content-center
+            div
+              h2
+                strong UGX 50,000,000
+              p.text-muted Sales
+
+            .divider
+
+            div
+              h2
+                strong UGX 15,000,000
+              p.text-muted Orders
+
+          .row.mt-3.g-3
+            .col-md-6
+              .card-box.small-card.text-center
+                h3.green-text UGX 42,000,000
+                p.text-muted In stock
+
+            .col-md-6
+              .card-box.small-card.text-center
+                h3.red-text 5
+                p.text-muted Out of stock
+
+        // Right form
+        .col-md-6
+          .card-box(style="height:auto;")
+            h3.mb-3 Add Product
+
+            .success-alert
+              | Product has been added successfully!
+              span x
+
+            form(method='post' action='/save' enctype='multipart/form-data')
+              label.form-label.fw-semibold(for='productName') Product Name
+              input#productName.form-control.mb-3(type='text' name='Product Name')
+              label.form-label.fw-semibold(for='category') Category
+              input#category.form-control.mb-3(type='text' name='Category')
+              label.form-label.fw-semibold(for='price') Price
+              input#price.form-control.mb-3(type='number' name='Price')
+              label.form-label.fw-semibold(for='quantity') Quantity
+              input#quantity.form-control.mb-3(type="number" name="Quantity")
+
+              .row.mb-3
+                .col-md-6
+                  label.form-label.fw-semibold(for='color') Color
+                  input#color.form-control(type="text" placeholder="Color")
+                .col-md-6
+                  label.form-label.fw-semibold(for='productImage') Product Image
+                  input#productImage.form-control(type="file" name="productImage")
+
+              .row
+                .col-md-6
+                  button.btn.btn-save.w-100 SAVE
+                .col-md-6
+                  button.btn.btn-clear.w-100(type="reset") CLEAR
+
+      // Table
+      .mt-4
+        table.table.table-bordered.text-center
+        .table-responsive
+            table.table.table-hover.align-middle
+              thead.table-light
+                tr
+                  th ID
+                  th NAME
+                  th CATEGORY
+                  th PRICE(UGX)
+                  th QUANTITY
+            tbody
+                if tableData && tableData.length > 0
+                  each table in tabledata
+                    tr
+                      td.fw-semibold= table.id
+                      td= table.name
+
+                      td= table.category
+                        
+
+                      td= table.price
+                      td= table.quantity
+                else
+                  tr
+                    td.text-center.text-muted(colspan='4') No data found
+      // FOOTER
+      footer.text-center.py-3.mt-4(style='position:absolute; bottom:10px; width:100%; color:#0f172a;')
+      small © Parvin 2026 Online Shopping System
+                script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js')

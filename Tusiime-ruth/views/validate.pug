@@ -1,0 +1,59 @@
+form.needs-validation(novalidate)
+  input.form-control.mb-3(
+    type="text"
+    placeholder="Product Name"
+    required
+    minlength="3"
+  )
+  .invalid-feedback Product name must be at least 3 characters
+  .valid-feedback Looks good!
+
+  input.form-control.mb-3(
+    type="text"
+    placeholder="Category"
+    required
+  )
+  .invalid-feedback Category is required
+  .valid-feedback Looks good!
+
+  input.form-control.mb-3(
+    type="number"
+    placeholder="Price"
+    required
+    min="1"
+  )
+  .invalid-feedback Enter a valid price
+  .valid-feedback Looks good!
+
+  input.form-control.mb-3(
+    type="number"
+    placeholder="Quantity"
+    required
+    min="1"
+  )
+  .invalid-feedback Quantity must be greater than 0
+  .valid-feedback Looks good!
+
+  .row.mb-3
+    .col-md-6
+      input.form-control(
+        type="text"
+        placeholder="Color"
+        required
+      )
+      .invalid-feedback Color is required
+      .valid-feedback Looks good!
+
+    .col-md-6
+      input.form-control(
+        type="file"
+        required
+      )
+      .invalid-feedback Please upload an image
+      .valid-feedback File uploaded!
+
+  .row
+    .col-md-6
+      button.btn.btn-save.w-100(type="submit") SAVE
+    .col-md-6
+      button.btn.btn-clear.w-100(type="reset") CLEAR

@@ -1,0 +1,17 @@
+.orange-bg{
+    background-color: #ed7d31;
+}
+
+.logo{
+width: 300px;
+}
+
+.join-btn{
+    text-decoration: none;
+    border: #ed7d31;
+    background-color: white;
+    color: #ed7d31;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+}

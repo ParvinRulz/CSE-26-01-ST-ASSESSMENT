@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .card-box {
+            background: white;
+            border: 1px solid #e5e5e5;
+            padding: 40px 25px;
+            height: 180px;
+        }
+
+        .small-card {
+            height: 120px;
+            padding: 30px;
+        }
+
+        .divider {
+            border-left: 2px solid #ddd;
+            height: 90px;
+            margin: 0 25px;
+        }
+
+        .success-alert {
+            background: #10b759;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .success-alert span {
+            position: absolute;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .btn-save {
+            background: #f58220;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-clear {
+            background: #d9d9d9;
+            font-weight: bold;
+        }
+
+        table thead {
+            background: black;
+            color: white;
+        }
+
+        .green-text {
+            color: #13a538;
+            font-weight: bold;
+        }
+
+        .red-text {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row g-4">
+        <!-- Left Dashboard -->
+        <div class="col-md-6">
+            <div class="card-box d-flex align-items-center justify-content-center">
+                <div>
+                    <h2><strong>UGX 50,000,000</strong></h2>
+                    <p class="text-muted">Sales</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div>
+                    <h2><strong>UGX 15,000,000</strong></h2>
+                    <p class="text-muted">Orders</p>
+                </div>
+            </div>
+
+            <div class="row mt-3 g-3">
+                <div class="col-md-6">
+                    <div class="card-box small-card text-center">
+                        <h3 class="green-text">UGX 42,000,000</h3>
+                        <p class="text-muted">In stock</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card-box small-card text-center">
+                        <h3 class="red-text">5</h3>
+                        <p class="text-muted">Out of stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="col-md-6">
+            <div class="card-box" style="height:auto;">
+                <h3 class="mb-3">Add Product</h3>
+
+                <div class="success-alert">
+                    Product has been added successfully!
+                    <span>x</span>
+                </div>
+
+                <form>
+                    <input type="text" class="form-control mb-3" placeholder="Product Name">
+                    <input type="text" class="form-control mb-3" placeholder="Category">
+                    <input type="text" class="form-control mb-3" placeholder="Price">
+                    <input type="text" class="form-control mb-3" placeholder="Quantity">
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Color">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="file" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn-save w-100">SAVE</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-clear w-100">CLEAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="mt-4">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>CATEGORY</th>
+                    <th>PRICE (UGX)</th>
+                    <th>QUANTITY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#645341</td>
+                    <td>Sumsang s25+ Ultra</td>
+                    <td>Smart Phones</td>
+                    <td>6,900,000</td>
+                    <td>981</td>
+                </tr>
+                <tr>
+                    <td>#645346</td>
+                    <td>Gucci XXL Shirt</td>
+                    <td>Fashion</td>
+                    <td>500,000</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>#645342</td>
+                    <td>XL Zara Shirt</td>
+                    <td>Fashion</td>
+                    <td>600,000</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td>#645344</td>
+                    <td>iPhone 15</td>
+                    <td>Smart Phones</td>
+                    <td>7,900,000</td>
+                    <td>752</td>
+                </tr>
+                <tr>
+                    <td>#645343</td>
+                    <td>Smart home Curtain</td>
+                    <td>Interior Design</td>
+                    <td>500,000</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>#645345</td>
+                    <td>Spectrum Laptop 14.6 Inc</td>
+                    <td>Laptops</td>
+                    <td>15,800,000</td>
+                    <td>144</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
