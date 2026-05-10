@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 
 //Import files.
-const dashboardForm = require("../Models/dashboardForm");
+const DashboardForm = require("../Models/dashboardForm");
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -24,7 +24,7 @@ router.post(
   upload.single("productImage"),
   async (req, res) => {
     try {
-      const newProduct = new Product(req.body);
+      const newProduct = new DashboardForm(req.body);
       newProduct.productImage = req.file.path;
       console.log(newProduct);
       await newProduct.save();

@@ -116,23 +116,23 @@ html(lang="en")
               | Product has been added successfully!
               span x
 
-            form(method='post' action='/save' enctype='multipart/form-data')
+            form(method='post' action='/dashboard' enctype='multipart/form-data')
               label.form-label.fw-semibold(for='productName') Product Name
-              input#productName.form-control.mb-3(type='text' name='Product Name')
+              input#productName.form-control.mb-3(type='text' name='productName')
               label.form-label.fw-semibold(for='category') Category
-              input#category.form-control.mb-3(type='text' name='Category')
+              input#category.form-control.mb-3(type='text' name='category')
               label.form-label.fw-semibold(for='price') Price
-              input#price.form-control.mb-3(type='number' name='Price')
+              input#price.form-control.mb-3(type='number' name='price')
               label.form-label.fw-semibold(for='quantity') Quantity
-              input#quantity.form-control.mb-3(type="number" name="Quantity")
+              input#quantity.form-control.mb-3(type="number" name='quantity')
 
               .row.mb-3
                 .col-md-6
                   label.form-label.fw-semibold(for='color') Color
-                  input#color.form-control(type="text" placeholder="Color")
+                  input#color.form-control(type="text" placeholder='color')
                 .col-md-6
                   label.form-label.fw-semibold(for='productImage') Product Image
-                  input#productImage.form-control(type="file" name="productImage")
+                  input#productImage.form-control(type="file" name='productImage')
 
               .row
                 .col-md-6

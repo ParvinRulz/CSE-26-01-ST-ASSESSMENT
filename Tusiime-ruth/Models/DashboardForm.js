@@ -17,6 +17,14 @@ const dashboardForm = new mongoose.Schema({
     },
     productImage: {
         type: String,
+    },
+    productId: {
+        type: String,
+        unique: true,
+        default: () => {
+            return "#" + Math.floor(100000 + Math.random() * 900000);
+        },
+
     }
 });
 
