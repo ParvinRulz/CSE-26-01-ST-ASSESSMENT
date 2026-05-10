@@ -13,12 +13,12 @@ html(lang='en')
         background: linear-gradient(to right, #f8fafc, #e2e8f0);
       }
 
-      .dark-blue {
-        color: #0f172a;
+      .orange {
+        color: #f58220;
       }
 
       .link-orange {
-        color: #0f172a !important;
+        color: #f58220 !important;
         text-decoration: none;
       }
 
@@ -50,7 +50,7 @@ html(lang='en')
     nav.navbar.navbar-expand-lg.bg-white.shadow-sm
       .container-fluid
 
-        a.navbar-brand.fw-bold(style='color:#0f172a;' href='/login') Best Shoppers
+        a.navbar-brand.fw-bold(style='color:#272b30;' href='/login') Best Shoppers
 
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav')
           span.navbar-toggler-icon
@@ -59,18 +59,18 @@ html(lang='en')
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             
             li.nav-item
-              a.nav-link(style='color:#0f172a;' href="/landingpage") Login
+              a.nav-link(style='color:#272b30;' href="/login") Landing Page
             li.nav-item
-              a.nav-link(style='color:#0f172a;' href="/tableData") Table Data
+              a.nav-link(style='color:#272b30;' href="/tableData") Table Data
             li.nav-item
-              a.nav-link(style='color:#0f172a;' href="/dashboard") Dashboard
+              a.nav-link(style='color:#272b30;' href="/dashboard") Dashboard
             
     .container.min-vh-100.d-flex.align-items-center.justify-content-center
       .row.shadow-lg.bg-white.overflow-hidden(style='max-width: 850px; width:100%; border-radius:20px;')
 
         // LEFT SIDE (branding / info)
-        .col-md-5.d-none.d-md-flex.flex-column.justify-content-center.align-items-center.text-center.p-4(style='background-color:#0f172a; color:white;')
-          img(src='/Images/logo.png' style='width:70px;')
+        .col-md-5.d-none.d-md-flex.flex-column.justify-content-center.align-items-center.text-center.p-4(style='background-color:#f58220; color:white;')
+          
           h4.mt-3.fw-bold Table Data
           p.small.mt-2
             | Recent details of the data run in the course of businness.
@@ -99,7 +99,7 @@ html(lang='en')
               style='background-color: #f58220; border: none;'
             ) Add Table Data
     // FOOTER
-    footer.text-center.py-3.mt-4(style='position:absolute; bottom:10px; width:100%; color:#0f172a;')
+    footer.text-center.py-3.mt-4(style='position:absolute; bottom:10px; width:100%; color:#272b30;')
       small © Parvin 2026 Online Shopping System
 
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js')
