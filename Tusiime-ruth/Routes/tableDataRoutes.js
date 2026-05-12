@@ -5,7 +5,6 @@ const router = express.Router();
 const TableData = require("../Models/TableData");
 
 router.get("/tableData", (req, res) => {
-  //let recentActivity = await RecentActivity.find({status:"Parked"}).sort({$natural:-1})
   res.render("tableData");
 });
 

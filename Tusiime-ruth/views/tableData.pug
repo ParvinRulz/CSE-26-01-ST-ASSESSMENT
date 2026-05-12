@@ -59,7 +59,7 @@ html(lang='en')
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             
             li.nav-item
-              a.nav-link(style='color:#272b30;' href="/login") Landing Page
+              a.nav-link(style='color:#272b30;' href="/login") Home
             li.nav-item
               a.nav-link(style='color:#272b30;' href="/tableData") Table Data
             li.nav-item
@@ -80,7 +80,7 @@ html(lang='en')
           form(method='post' action='/add-tableData')
             .mb-4
               label.form-label.fw-semibold(for='id') ID
-              input#id.form-control(type='number' name='id')
+              input#id.form-control(type='text' name='id')
 
               label.form-label.fw-semibold.mt-3(for='name') NAME
               input#name.form-control(type='text' name='name')

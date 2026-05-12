@@ -4,6 +4,7 @@ const multer = require("multer");
 
 //Import files.
 const DashboardForm = require("../Models/dashboardForm");
+const TableData = require("../Models/TableData");
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -15,25 +16,30 @@ let storage = multer.diskStorage({
 });
 let upload = multer({ storage: storage });
 
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+router.get("/dashboard", async (req, res) => {
+  const tableData = await TableData.find().sort({ $natural: -1 });
+  console.log(tableData);
+  res.render("dashboard", {
+    tableData,
+  });
 });
 
-router.post(
-  "/dashboard",
-  upload.single("productImage"),
-  async (req, res) => {
-    try {
-      const newProduct = new DashboardForm(req.body);
-      newProduct.productImage = req.file.path;
-      console.log(newProduct);
-      await newProduct.save();
-      res.redirect("/");
-    } catch (error) {
-      console.error(error);
-      res.render("dashboard");
-    }
-  },
-);
+router.post("/dashboard", upload.single("productImage"), async (req, res) => {
+  try {
+    const newProduct = new DashboardForm(req.body);
+    newProduct.productImage = req.file.path;
+    await newProduct.save();
+    const tableData = await TableData.find().sort({ $natural: -1 });
+    res.render("dashboard", {
+      tableData,
+      successMessage: true,
+    });
+  } catch (error) {
+    console.error(error);
+    res.render("dashboard", {
+      successMessage: false,
+    });
+  }
+});
 
 module.exports = router;
